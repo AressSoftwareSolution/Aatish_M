@@ -1,0 +1,443 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Product Manager (FastAPI UI)</title>
+  <style>
+    body{font-family:Arial;margin:40px;background:#f4f6f8}
+    h1{margin-bottom:20px}
+    .card{background:white;padding:20px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);margin-bottom:20px}
+    input{margin:5px;padding:8px}
+    button{padding:8px 12px;margin:5px;cursor:pointer}
+    table{border-collapse:collapse;width:100%;margin-top:10px}
+    th,td{border:1px solid #ddd;padding:8px;text-align:left}
+    th{background:#eee}
+  </style>
+</head>
+<body>
+
+<h1>FastAPI Product Manager</h1>
+
+<div class="card">
+  <h3>Add Product</h3>
+  <input id="name" placeholder="Product name">
+  <input id="price" type="number" placeholder="Price">
+  <input id="quantity" type="number" placeholder="Quantity">
+  <button onclick="addProduct()">Add Product</button>
+</div>
+
+<div class="card">
+  <h3>Products</h3>
+  <button onclick="loadProducts()">Refresh List</button>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="productTable"></tbody>
+  </table>
+</div>
+
+<script>
+const API = "http://127.0.0.1:8000";
+
+async function loadProducts(){
+  const res = await fetch(`${API}/products`);
+  const data = await res.json();
+
+  const table = document.getElementById("productTable");
+  table.innerHTML = "";
+
+  data.forEach(p => {
+    const row = `
+      <tr>
+        <td>${p.id}</td>
+        <td>${p.name}</td>
+        <td>${p.price}</td>
+        <td>${p.quantity}</td>
+        <td><button onclick="deleteProduct(${p.id})">Delete</button></td>
+      </tr>
+    `;
+
+    table.innerHTML += row;
+  });
+}
+
+async function addProduct(){
+  const nameInput = document.getElementById("name");
+  const priceInput = document.getElementById("price");
+  const quantityInput = document.getElementById("quantity");
+
+  const name = nameInput.value;
+  const price = priceInput.value;
+  const quantity = quantityInput.value;
+
+  await fetch(`${API}/products`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      name,
+      price:Number(price),
+      quantity:Number(quantity)
+    })
+  });
+
+  // reload product list
+  loadProducts();
+
+  // clear inputs
+  nameInput.value = "";
+  priceInput.value = "";
+  quantityInput.value = "";
+}
+
+async function deleteProduct(id){
+  await fetch(`${API}/products/${id}`,{method:"DELETE"});
+  loadProducts();
+}
+
+loadProducts();
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>FastAPI Product Manager</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+font-family:Segoe UI;
+margin:0;
+padding:40px;
+background:linear-gradient(120deg,#4facfe,#00f2fe);
+min-height:100vh;
+}
+
+h1{
+text-align:center;
+color:white;
+margin-bottom:30px;
+}
+
+.container{
+max-width:850px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+input{
+padding:10px;
+margin:5px;
+border-radius:6px;
+border:1px solid #ccc;
+outline:none;
+transition:.2s;
+}
+
+input:focus{
+border-color:#4facfe;
+box-shadow:0 0 6px rgba(79,172,254,0.4);
+}
+
+button{
+padding:10px 16px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+transition:.2s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.addBtn{
+background:#2196f3;
+color:white;
+}
+
+@keyframes slideIn{
+from{
+transform:translateX(200px);
+opacity:0;
+}
+to{
+transform:translateX(0);
+opacity:1;
+}
+}
+
+@keyframes shake{
+0%{transform:translateX(0)}
+25%{transform:translateX(-5px)}
+50%{transform:translateX(5px)}
+75%{transform:translateX(-5px)}
+100%{transform:translateX(0)}
+}
+
+@keyframes slideIn{
+from{
+transform:translateX(200px);
+opacity:0;
+}
+to{
+transform:translateX(0);
+opacity:1;
+}
+}
+
+@keyframes shake{
+0%{transform:translateX(0)}
+25%{transform:translateX(-5px)}
+50%{transform:translateX(5px)}
+75%{transform:translateX(-5px)}
+100%{transform:translateX(0)}
+}
+
+.refreshBtn{
+background:#4caf50;
+color:white;
+}
+
+.deleteBtn{
+background:#ff5252;
+color:white;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+th,td{
+padding:10px;
+border-bottom:1px solid #eee;
+text-align:left;
+}
+
+th{
+background:#f5f5f5;
+}
+
+tbody tr{
+animation:fadeIn .4s ease;
+}
+
+tbody tr:hover{
+background:#f9f9f9;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+#popup{
+position:fixed;
+top:20px;
+right:20px;
+background:#4caf50;
+color:white;
+padding:14px 20px;
+border-radius:6px;
+display:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>FastAPI Product Manager</h1>
+
+<div class="container">
+
+<div class="card">
+
+<h3>Add Product</h3>
+
+<input id="name" placeholder="Product name">
+<input id="price" type="number" placeholder="Price">
+<input id="quantity" type="number" placeholder="Quantity">
+
+<button class="addBtn" onclick="addProduct()">Add Product</button>
+
+</div>
+
+<div class="card">
+
+<h3>Products</h3>
+
+<button class="refreshBtn" onclick="loadProducts()">Refresh List</button>
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Delete</th>
+</tr>
+</thead>
+
+<tbody id="productTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<div id="popup">Product Added</div>
+
+<script>
+
+const API="http://127.0.0.1:8000";
+
+function showPopup(message,color="green"){
+
+const popup=document.getElementById("popup");
+
+popup.innerText=message;
+popup.style.background=color;
+
+popup.style.display="block";
+popup.style.animation="slideIn 0.4s ease";
+
+setTimeout(()=>{
+popup.style.display="none";
+},2500);
+
+}
+
+async function loadProducts(){
+
+const res=await fetch(`${API}/products`);
+const data=await res.json();
+
+const table=document.getElementById("productTable");
+
+table.innerHTML="";
+
+data.forEach(p=>{
+
+const row=`
+<tr>
+<td>${p.id}</td>
+<td>${p.name}</td>
+<td>${p.price}</td>
+<td>${p.quantity}</td>
+<td><button class="deleteBtn" onclick="deleteProduct(${p.id})">Delete</button></td>
+</tr>
+`;
+
+table.innerHTML+=row;
+
+});
+
+}
+
+async function addProduct(){
+
+const nameInput=document.getElementById("name");
+const priceInput=document.getElementById("price");
+const quantityInput=document.getElementById("quantity");
+
+const name=nameInput.value.trim();
+const price=priceInput.value;
+const quantity=quantityInput.value;
+
+/* VALIDATION */
+
+if(name=="" || price=="" || quantity==""){
+
+showPopup("Please fill all fields!","red");
+
+/* shake inputs */
+nameInput.style.animation="shake .3s";
+priceInput.style.animation="shake .3s";
+quantityInput.style.animation="shake .3s";
+
+setTimeout(()=>{
+nameInput.style.animation="";
+priceInput.style.animation="";
+quantityInput.style.animation="";
+},300);
+
+return;
+}
+
+await fetch(`${API}/products`,{
+
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+name:name,
+price:Number(price),
+quantity:Number(quantity)
+})
+
+});
+
+nameInput.value="";
+priceInput.value="";
+quantityInput.value="";
+
+showPopup("Product Added Successfully","green");
+
+loadProducts();
+
+}
+
+async function deleteProduct(id){
+
+await fetch(`${API}/products/${id}`,{method:"DELETE"});
+
+showPopup("Product Deleted","orange");
+
+loadProducts();
+
+}
+
+loadProducts();
+
+</script>
+
+</body>
+</html>

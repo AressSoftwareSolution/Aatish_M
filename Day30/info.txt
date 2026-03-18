@@ -1,0 +1,54 @@
+User
+ ↓
+Browser UI (index.html)
+ ↓
+JavaScript fetch()
+ ↓
+FastAPI Backend
+ ↓
+Python Logic
+ ↓
+Response JSON
+ ↓
+UI Updates Product List
+
+
+
+4️⃣ Example
+In UI
+
+You type:
+
+Name: Apple
+Quantity: 10
+Price: 20
+
+UI sends request:
+
+POST /products
+
+Body:
+
+{
+ "name": "Apple",
+ "quantity": 10,
+ "price": 20
+}
+
+FastAPI stores it and returns response.
+
+Then UI calls:
+
+GET /products
+
+to display list.   
+
+
+
+=======process to run code=======
+uvicorn fast_api:app --reload   ---- run on terminal
+
+http://127.0.0.1:8000/docs ---- to see FastAPI UI 
+
+right click index.html file and select open with explorar select file name and it will open UI automatically 
+
