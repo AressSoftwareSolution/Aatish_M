@@ -1,0 +1,42 @@
+# docker-flask
+
+
+
+## Overview
+This is a **production-ready Flask application** containerized with **Docker**, featuring a **modern, responsive UI** using Bootstrap and custom CSS.  
+The project demonstrates both **Docker fundamentals** and **advanced practices**, including multi-stage builds, non-root user, and best practices for production-ready containers.
+
+## Features
+- Simple Flask app with attractive UI
+- Responsive design with Bootstrap
+- Docker containerization (multi-stage build)
+- Non-root user for security
+- Optional Docker Compose for multi-container setups
+- Works in **GitHub Codespaces** or any Docker environment
+
+## Project Structure
+
+docker-flask/
+├── app.py # Flask application
+├── requirements.txt # Python dependencies
+├── Dockerfile # Docker image instructions
+├── templates/ # HTML templates
+│ └── index.html
+├── static/ # CSS and static assets
+│ └── style.css
+├── docker-compose.yml # Optional: multi-container orchestration
+└── README.md # Project documentation
+
+
+## How to Run
+
+### Using Docker
+1. Build the Docker image:
+```bash
+docker build -t my-flask-app-ui .
+
+Run the container:
+
+docker run -p 5000:5000 my-flask-app
+
+Open browser at http://localhost:5000 or Codespaces port mapping
