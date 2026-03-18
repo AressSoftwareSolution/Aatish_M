@@ -1,0 +1,62 @@
+User opens the dashboard → establishes a WebSocket connection with the server.
+
+User creates a new task → API endpoint /tasks is called.
+
+Server adds the task, runs a background notification, and broadcasts the new task to all connected clients.
+
+All dashboards update instantly → no page reload needed.
+
+User can update task status → change is sent to the server and broadcast to everyone.
+
+
+
+======================================
+Technical Explanation of Task Manager Project
+
+Purpose
+
+A backend API to manage tasks with real-time updates and asynchronous processing.
+
+Backend
+
+FastAPI framework in Python.
+
+Provides REST API endpoints:
+
+POST /tasks → create task
+
+GET /tasks → fetch tasks
+
+POST /tasks/{id}/status → update task status
+
+Real-Time Communication
+
+Uses WebSockets (/ws) to broadcast task creation and updates to all connected clients instantly.
+
+Clients subscribe via WebSocket and receive live messages.
+
+Asynchronous / Background Tasks
+
+Uses FastAPI BackgroundTasks to run notifications asynchronously.
+
+Ensures long-running operations don’t block HTTP responses.
+
+Middleware
+
+HTTP middleware logs all incoming requests and outgoing responses.
+
+Can be extended for authentication, security, or request preprocessing.
+
+Frontend
+
+Simple HTML + JS dashboard connects to backend API and WebSocket.
+
+Updates tasks dynamically as server broadcasts events.
+
+Data Storage
+
+In-memory Python list for tasks (can be replaced with a database).
+
+Flow
+
+Client connects → creates/updates task → API processes request → background task runs → WebSocket broadcasts → all clients update.

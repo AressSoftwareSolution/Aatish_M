@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager Dashboard</title>
+    <style>
+        body { font-family: Arial; background:#0f172a; color:#fff; display:flex; flex-direction:column; align-items:center; padding:50px; }
+        h1 { margin-bottom:20px; }
+        #tasks { width:500px; border:1px solid #333; padding:20px; border-radius:10px; background:#1e293b; margin-bottom:20px; }
+        .task { padding:10px; border-bottom:1px solid #333; display:flex; justify-content: space-between; align-items:center; }
+        .task:last-child { border-bottom:none; }
+        form { display:flex; gap:10px; margin-bottom:10px; }
+        input { flex:1; padding:10px; border-radius:5px; border:none; }
+        button { padding:8px 12px; border:none; border-radius:5px; background:#00e5ff; color:#000; cursor:pointer; }
+        select { padding:5px; border-radius:5px; border:none; }
+    </style>
+</head>
+<body>
+    <h1>Task Manager Dashboard</h1>
+
+    <!-- Task Form -->
+    <form method="post" action="/tasks">
+        <input type="text" name="title" placeholder="New Task" required>
+        <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Task List -->
+    <div id="tasks">
+        {% for task in tasks %}
+            <div class="task" id="task-{{task.id}}">
+                <span>{{task.title}} ({{task.status}})</span>
+                <form method="post" action="/tasks/{{task.id}}/status">
+                    <select name="status">
+                        <option value="pending" {% if task.status=='pending' %}selected{% endif %}>Pending</option>
+                        <option value="completed" {% if task.status=='completed' %}selected{% endif %}>Completed</option>
+                    </select>
+                    <button type="submit">Update</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="status">Connecting to WebSocket...</div>
+
+    <script>
+        const tasksDiv = document.getElementById("tasks");
+        const statusDiv = document.getElementById("status");
+
+        // Connect to WebSocket dynamically
+        const ws = new WebSocket("ws://" + window.location.host + "/ws");
+
+        ws.onopen = () => { statusDiv.textContent = "Connected to WebSocket!"; };
+
+        ws.onmessage = (event) => {
+            const msg = event.data;
+            const taskElem = document.createElement("div");
+            taskElem.className = "task";
+            taskElem.textContent = msg;
+            tasksDiv.prepend(taskElem); // newest on top
+        };
+
+        ws.onclose = () => { statusDiv.textContent = "WebSocket disconnected!"; };
+        ws.onerror = () => { statusDiv.textContent = "WebSocket error!"; };
+    </script>
+</body>
+</html>
