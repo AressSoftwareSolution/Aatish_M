@@ -1,0 +1,35 @@
+K-Means is a clustering algorithm that groups data into K number of clusters based on similarity.
+
+========How K-Means works (step-by-step)========
+
+
+        Step 1 — Choose number of clusters (K)
+        Step 2 — Pick random center points
+        Step 3 — Assign each data point to nearest center
+        Step 4 — Recalculate centers
+
+        Find average of each group → new center.
+
+        Step 5 — Repeat steps 3 & 4
+
+        Keep updating until groups stop changing.
+
+        👉 Now clustering is complete.
+
+========PCA========
+
+
+PCA = Principal Component Analysis
+
+👉 PCA is a technique used to reduce the number of features (columns) in data while keeping most of the important information.
+    This is called dimensionality reduction.
+
+ ------Working of PCA------
+1️⃣ Look at all features
+2️⃣ Find patterns and relationships
+3️⃣ Create new combined features (principal components)
+4️⃣ Keep only most important ones
+5️⃣ Remove less useful ones
+
+Now data is smaller but still meaningful.
+
