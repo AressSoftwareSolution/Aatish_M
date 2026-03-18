@@ -1,0 +1,17 @@
+1️⃣ What is an ML Pipeline?:
+
+An ML Pipeline is a structured sequence of steps used to build a machine learning model.
+
+Instead of doing things manually step-by-step, a pipeline automates:
+
+Data preprocessing
+
+Feature scaling
+
+Feature selection
+
+Model training
+
+Prediction
+
+
