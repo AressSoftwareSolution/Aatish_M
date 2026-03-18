@@ -1,0 +1,16 @@
+# Working Summary
+
+app.py → Flask app code.
+
+requirements.txt → Lists Python dependencies.
+
+Dockerfile → Tells Docker how to build the container.
+
+docker build → Creates a Docker image (blueprint).
+
+docker run → Starts a container (running app).
+
+# Build Docker Image - cmd for terminal : docker build -t my-flask-app .
+# Run Container - cmd for terminal : docker run -p 5000:5000 my-flask-app
+
+
