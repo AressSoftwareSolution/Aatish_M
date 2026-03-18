@@ -1,0 +1,21 @@
+Python is a powerful, high-level, interpreted programming language created by Guido van Rossum and first released in 1991. 
+It was designed with an emphasis on code readability and simplicity, allowing developers to write clear and logical programs 
+using minimal syntax. Python supports multiple programming paradigms, including procedural, object-oriented, and functional 
+programming, making it highly flexible for different types of software development. It is dynamically typed and features 
+automatic memory management, which simplifies the development process. Python is widely used in web development through 
+frameworks like Django and Flask, and it plays a major role in data science, artificial intelligence, and machine learning with 
+libraries such as TensorFlow, PyTorch, NumPy, and Pandas. Additionally, Python is commonly used for automation, scripting, 
+cybersecurity, game development, and cloud computing. Its large standard library, strong community support, cross-platform 
+compatibility, and vast ecosystem of third-party packages make it one of the most popular and versatile programming languages
+ in the modern technology landscape. Java is a high-level, object-oriented programming language developed by Sun Microsystems 
+ and later acquired by Oracle Corporation. It is designed around core Object-Oriented Programming (OOP) principles,
+  including encapsulation, inheritance, polymorphism, and abstraction. Encapsulation is achieved by binding data and
+   methods together within classes and restricting access using access modifiers like private and public. 
+   Inheritance allows one class to acquire properties and behaviors of another using the extends keyword, 
+   promoting code reusability. Polymorphism enables methods to perform different behaviors through method overloading 
+   and method overriding, while abstraction hides implementation details using abstract classes and interfaces. 
+   Java also defines two main categories of data types: primitive and non-primitive. Primitive data types include 
+   byte, short, int, long, float, double, char, and boolean, which store simple values directly. Non-primitive data types, 
+   such as String, arrays, classes, and interfaces, store references to memory locations. Together, Java’s strong type 
+   system and OOP concepts make it a robust, secure, and platform-independent language widely used for enterprise applications, 
+   mobile development, and web systems.
