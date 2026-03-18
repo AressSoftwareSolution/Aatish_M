@@ -1,0 +1,41 @@
+Patient Name: Priya Sharma
+Age: 32
+Gender: Female
+Date: 10 March 2026
+
+--- Complete Blood Count (CBC) ---
+Hemoglobin: 13.5 g/dL (Normal)
+RBC Count: 4.5 million cells/mcL (Normal)
+WBC Count: 7800 cells/mcL (Normal)
+Platelets: 250000 cells/mcL (Normal)
+
+--- Thyroid Profile ---
+TSH: 6.2 uIU/mL (High)
+T3: 0.9 ng/mL (Low)
+T4: 4.5 ug/dL (Low)
+
+--- Vitamin Levels ---
+Vitamin D: 18 ng/mL (Low)
+Vitamin B12: 220 pg/mL (Low)
+
+--- Iron Studies ---
+Serum Iron: 45 ug/dL (Low)
+Ferritin: 12 ng/mL (Low)
+
+--- Lipid Profile ---
+Total Cholesterol: 190 mg/dL (Borderline)
+LDL: 120 mg/dL (Borderline)
+HDL: 50 mg/dL (Good)
+Triglycerides: 140 mg/dL (Normal)
+
+--- Blood Sugar ---
+Fasting Blood Sugar: 95 mg/dL (Normal)
+HbA1c: 5.4% (Normal)
+
+--- Observations ---
+Patient shows signs of hypothyroidism and vitamin deficiencies.
+
+--- Doctor Notes ---
+Suggest thyroid medication consultation, vitamin D supplements, and improved nutrition.
+
+--- End of Report ---

@@ -1,0 +1,39 @@
+Patient Name: Rajesh Kumar
+Age: 45
+Gender: Male
+Date: 12 March 2026
+
+--- Complete Blood Count (CBC) ---
+Hemoglobin: 10.2 g/dL (Low)
+RBC Count: 3.8 million cells/mcL (Low)
+WBC Count: 12500 cells/mcL (High)
+Platelets: 140000 cells/mcL (Slightly Low)
+
+--- Liver Function Test ---
+Bilirubin Total: 1.8 mg/dL (High)
+ALT (SGPT): 65 U/L (High)
+AST (SGOT): 58 U/L (High)
+Alkaline Phosphatase: 150 U/L (High)
+
+--- Kidney Function Test ---
+Creatinine: 1.6 mg/dL (High)
+Urea: 48 mg/dL (High)
+
+--- Lipid Profile ---
+Total Cholesterol: 240 mg/dL (High)
+LDL: 160 mg/dL (High)
+HDL: 35 mg/dL (Low)
+Triglycerides: 210 mg/dL (High)
+
+--- Blood Sugar ---
+Fasting Blood Sugar: 130 mg/dL (High)
+Postprandial Blood Sugar: 190 mg/dL (High)
+HbA1c: 7.5% (High)
+
+--- Observations ---
+Patient shows signs of anemia, possible infection, liver stress, and elevated blood sugar levels.
+
+--- Doctor Notes ---
+Recommend iron-rich diet, regular exercise, reduced fat intake, and further evaluation for liver function.
+
+--- End of Report ---

@@ -1,0 +1,31 @@
+Patient Name: Neha Patel
+Age: 28
+Gender: Female
+Date: 11 March 2026
+
+--- Complete Blood Count (CBC) ---
+Hemoglobin: 9.5 g/dL (Low)
+RBC Count: 3.5 million cells/mcL (Low)
+WBC Count: 7000 cells/mcL (Normal)
+Platelets: 300000 cells/mcL (Normal)
+
+--- Iron Studies ---
+Serum Iron: 30 ug/dL (Low)
+Ferritin: 8 ng/mL (Low)
+
+--- Vitamin Levels ---
+Vitamin B12: 180 pg/mL (Low)
+Vitamin D: 15 ng/mL (Low)
+
+--- Thyroid Profile ---
+TSH: 3.0 uIU/mL (Normal)
+T3: 1.2 ng/mL (Normal)
+T4: 6.0 ug/dL (Normal)
+
+--- Observations ---
+Patient has iron deficiency anemia and vitamin deficiencies.
+
+--- Doctor Notes ---
+Recommend iron supplements, vitamin B12 injections, and improved diet including green vegetables and fruits.
+
+--- End of Report ---

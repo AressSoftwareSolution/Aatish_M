@@ -1,0 +1,36 @@
+Patient Name: Rajesh Kumar
+Age: 55
+Gender: Male
+Date: 14 March 2026
+
+--- Complete Blood Count (CBC) ---
+Hemoglobin: 11.0 g/dL (Low)
+RBC Count: 4.0 million cells/mcL (Low)
+WBC Count: 9800 cells/mcL (Normal)
+Platelets: 160000 cells/mcL (Normal)
+
+--- Kidney Function Test ---
+Creatinine: 2.1 mg/dL (High)
+Urea: 60 mg/dL (High)
+Uric Acid: 8.5 mg/dL (High)
+
+--- Liver Function Test ---
+Bilirubin Total: 1.2 mg/dL (Slightly High)
+ALT (SGPT): 70 U/L (High)
+AST (SGOT): 65 U/L (High)
+
+--- Blood Pressure ---
+Systolic: 150 mmHg (High)
+Diastolic: 95 mmHg (High)
+
+--- Blood Sugar ---
+Fasting Blood Sugar: 140 mg/dL (High)
+HbA1c: 8.0% (High)
+
+--- Observations ---
+Patient shows signs of kidney dysfunction, high blood pressure, and diabetes.
+
+--- Doctor Notes ---
+Recommend low-salt diet, blood pressure control, diabetes management, and kidney specialist consultation.
+
+--- End of Report ---

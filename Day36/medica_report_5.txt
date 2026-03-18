@@ -1,0 +1,29 @@
+Patient Name: Rahul Singh
+Age: 40
+Gender: Male
+Date: 13 March 2026
+
+--- Complete Blood Count (CBC) ---
+Hemoglobin: 14.5 g/dL (Normal)
+RBC Count: 5.0 million cells/mcL (Normal)
+WBC Count: 15000 cells/mcL (High)
+Platelets: 280000 cells/mcL (Normal)
+
+--- Infection Markers ---
+CRP (C-Reactive Protein): 25 mg/L (High)
+ESR: 40 mm/hr (High)
+
+--- Liver Function Test ---
+ALT (SGPT): 45 U/L (Slightly High)
+AST (SGOT): 40 U/L (Normal)
+
+--- Chest X-Ray ---
+Findings suggest mild lung infection.
+
+--- Observations ---
+Elevated infection markers and high WBC count indicate possible bacterial infection.
+
+--- Doctor Notes ---
+Antibiotics recommended, rest, hydration, and follow-up after 5 days.
+
+--- End of Report ---
