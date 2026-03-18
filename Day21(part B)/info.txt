@@ -1,0 +1,215 @@
+🖼 Suppose Input Image is:
+
+A small 4 × 4 grayscale image
+
+(Grayscale = only 1 color channel)
+
+1 1 1 0
+1 1 1 0
+1 1 1 0
+0 0 0 0
+
+Think of white area on left side.
+
+Each number = pixel value.
+
+🔷 Layer 1: Convolution Layer
+What it does:
+
+Looks at small parts of image.
+
+🧩 Step 1: Use a Filter (Kernel)
+
+Example filter (2 × 2):
+
+1  0
+0 -1
+
+This filter moves across the image.
+
+🧮 How It Works (Very Simple)
+
+Take first 2×2 part of image:
+
+1 1
+1 1
+
+Multiply with filter:
+
+(1×1) + (1×0) + (1×0) + (1×-1)
+= 1 + 0 + 0 - 1
+= 0
+
+That gives one output value.
+
+Then the filter slides to the right.
+
+🔄 Output After Sliding
+
+After sliding everywhere, we get a smaller matrix:
+
+0  0  ?
+0  0  ?
+?  ?  ?
+
+This output is called:
+
+👉 Feature Map
+
+It highlights patterns like:
+
+Edges
+
+Lines
+
+Texture
+
+🔷 Layer 2: Activation Function (ReLU)
+
+After convolution, we apply:
+
+ReLU formula:
+
+ReLU(x) = max(0, x)
+
+Meaning:
+
+If value is negative → make it 0
+
+If positive → keep it
+
+Example:
+
+Before ReLU:
+
+2  -3
+-1  5
+
+After ReLU:
+
+2   0
+0   5
+
+Why?
+
+Adds non-linearity.
+Helps model learn complex patterns.
+
+🔷 Layer 3: Pooling Layer
+What it does:
+
+Reduces size of feature map.
+
+Example 2×2 Max Pooling:
+
+Take:
+
+1 3
+2 4
+
+Max value = 4
+
+So it keeps only 4.
+
+If feature map is:
+
+1 2 3 4
+5 6 7 8
+9 1 2 3
+4 5 6 7
+
+After 2×2 pooling:
+
+6 8
+9 7
+
+Why do this?
+
+Reduce computation
+
+Remove unnecessary details
+
+Keep important features
+
+🔷 Layer 4: Flatten
+
+After many convolution + pooling layers:
+
+We get small matrix like:
+
+2 5
+7 9
+
+Flatten means convert to 1D:
+
+[2, 5, 7, 9]
+
+Now it becomes normal neural network input.
+
+🔷 Layer 5: Fully Connected Layer
+
+This is like normal neural network.
+
+It calculates final output.
+
+Example:
+
+Output:
+
+[0.9, 0.1]
+
+Meaning:
+
+90% Dog
+
+10% Cat
+
+
+
+======== Data Augmentation ==========
+
+📌 Step-by-Step What Actually Happens
+
+Suppose you have 1 dog image.
+
+During Epoch 1:
+
+Original dog is taken from dataset
+
+RandomFlip layer decides → flip it
+
+Flipped dog goes into CNN
+
+Model learns from flipped version
+
+During Epoch 2:
+
+Same original dog is taken again
+
+RandomRotation decides → rotate 5 degrees
+
+Rotated dog goes into CNN
+
+Model learns from rotated version
+
+So yes:
+
+The transformation happens inside the training loop.
+
+
+===== Batch Normalization =====
+For each batch:
+
+1️⃣ Takes the outputs
+2️⃣ Computes mean
+3️⃣ Computes standard deviation
+4️⃣ Normalizes values:
+
+
+So data becomes:
+
+Mean ≈ 0
+
+Std ≈ 1
+
+Then it slightly scales and shifts using learnable parameters.
