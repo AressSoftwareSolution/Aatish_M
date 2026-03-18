@@ -1,0 +1,2 @@
+py -3.10 -m venv venv_demo
+venv_demo\Scripts\activate
