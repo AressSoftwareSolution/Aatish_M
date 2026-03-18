@@ -1,0 +1,60 @@
+========Embeddings========
+
+1] Text embeddings are numerical vector representations of text.
+
+2] Instead of matching exact keywords, embeddings capture meaning.
+
+3] Embeddings place text close together in vector space because they mean similar things.
+
+===========Semantic Search===============
+1] Semantic search retrieves results based on meaning similarity
+
+2] Workflow:
+        Convert documents into embeddings.
+
+        Store embeddings in a vector database.
+
+        Convert user query into an embedding.
+
+        Find the nearest vectors (similar meaning).
+
+        Return matching documents.
+
+===========Vector Databases & Libraries===========
+definition: Vector databases are specialized storage systems designed to efficiently store, index, and search high-dimensional vector embeddings.
+
+Common Libraries:
+    - FAISS (Facebook AI Similarity Search)
+    - Weaviate
+    - Pinecone
+    - Qdrant
+
+[🔹] Pinecone:
+
+Pinecone is used to store and search embeddings in production.
+A fully managed cloud vector database.
+Paid service
+
+[🔹] Chroma
+
+Chroma is used for storing embeddings locally or in small deployments.
+Open-source embedding database built for AI apps.
+Free and open-source.
+Great for development and smaller projects.
+
+[🔹] FAISS-  Facebook AI Similarity Search
+
+FAISS is used to quickly find similar vectors.
+
+When you have millions of embeddings, comparing them one by one is slow.
+
+FAISS helps:
+
+    Find nearest neighbors fast
+
+    Handle large-scale vector search
+
+    Optimize memory and speed
+
+Library developed by Meta AI for efficient similarity search.
+
