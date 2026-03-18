@@ -1,0 +1,4 @@
+JSON → data sharing
+XML → structured documents
+YAML → configuration files
+pickle → Python object storage
