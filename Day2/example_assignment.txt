@@ -1,0 +1,2 @@
+Hello we are writing in the file
+We are learning file handling with loggingThis is a appended at the end

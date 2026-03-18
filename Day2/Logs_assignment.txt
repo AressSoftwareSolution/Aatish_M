@@ -1,0 +1,8 @@
+2026-02-17 16:12:51,444 - INFO - Data written successfully to 'example_assignment.txt'
+2026-02-17 16:12:51,445 - INFO - Data appended successfully to the file 'example_assignment.txt'
+2026-02-17 16:12:51,454 - INFO - Reading file contents 'example_assignment.txt'
+2026-02-17 16:12:51,455 - INFO - File processing Successfully
+2026-02-17 16:16:23,397 - INFO - Data written successfully to 'example_assignment.txt'
+2026-02-17 16:16:23,397 - INFO - Data appended successfully to the file 'example_assignment.txt'
+2026-02-17 16:16:23,398 - INFO - Reading file contents 'example_assignment.txt'
+2026-02-17 16:16:23,398 - INFO - File processing Successfully

@@ -1,0 +1,4 @@
+Hello! Welcome to Python File I/O.
+This is the first line.
+This line is appended at the end.
+This line is appended at the end.

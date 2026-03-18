@@ -1,0 +1,7 @@
+2026-02-17 15:12:00,898 - DEBUG - This is aDEBUG message
+2026-02-17 15:12:00,899 - INFO - General info about the program flow
+2026-02-17 15:12:00,899 - WARNING - Low disk space warning
+2026-02-17 15:12:00,899 - ERROR - An error occured!
+2026-02-17 15:12:00,899 - CRITICAL - There is a critical issue!
+2026-02-17 15:12:05,563 - ERROR - Cannot divided by zero
+2026-02-17 15:12:05,563 - INFO - Program finished...............
