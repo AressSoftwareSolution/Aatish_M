@@ -1,0 +1,17 @@
+Machine learning = teaching computers to learn patterns from data and make decisions or predictions.
+
+======= Supervised learning =======
+- Supervised learning is a type of machine learning where the model learns from labeled data (data with correct answers) to make predictions on new data.
+- The computer is trained using input + correct output.
+- Types : classification and Regression
+- Applications - Email spam filtering
+
+======= Unupervised learning =======
+- Unsupervised learning is a type of machine learning where the model learns from unlabeled data and finds patterns or groups by itself.
+- Types: Clustering and assiociation (Finds relationships between items.)
+- Application - Customer Segmentation 
+
+========= preprocessing ===========
+- Preprocessing in machine learning means cleaning and preparing data before giving it to the model so the model can learn properly.
+========== Feature Scaling =========
+- Feature scaling is the process of making numerical data values smaller and comparable by bringing them into a similar range
