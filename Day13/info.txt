@@ -1,0 +1,53 @@
+[*] Overfitting
+
+The model learns too much from the training data, including noise and random fluctuations, 
+so it performs very well on training data but poorly on unseen data.
+This usually happens when the model is too complex.
+
+[*] Underfitting
+
+The model does not learn enough from the data, so it cannot capture the true underlying patterns.
+This usually happens when the model is too simple.
+
+
+[1] Mean Absolute Error (MAE) - (Lower MAE = better model) - (Average prediction error.) Average difference between actual and predicted value. It measures how far predictions are from real values (on average).
+
+[2] Mean Squared Error (MSE) - (Lower MSE = better model) - Mean Squared Error is the average of the squared differences between actual values and predicted values.
+
+[3] Root Mean Squared Error (RMSE) - (Lower RMSE = better model) - Square root of MSE → easier to understand.
+
+[4] R² score -  How well model explains data.
+
+    Range:
+
+    1 → perfect
+
+    0 → no learning
+
+    Higher = better.
+
+[5] Accuracy = Divide total number of corret prediction from the all predictions.
+
+[6] Precision = Out of all predictive positive how many were actually correct.
+
+[7] Recall = Out of all actual positive , how many did we correctly classify. 
+
+[8] F1 Score = Balance between precision and recall.
+
+[9] Cross-validation = train and test model multiple times using different data splits to get reliable performance.
+
+Most common type: K-Fold
+
+Steps:
+
+1️⃣ Split dataset into K equal parts (folds)
+2️⃣ Train model on K-1 parts
+3️⃣ Test on remaining part
+4️⃣ Repeat until every part is tested once
+5️⃣ Take average score
+
+[10] An epoch means:  One complete pass of the entire training dataset through the model.
+
+[11] Batch size means: How many samples the model processes at one time before updating itself.
+
+[12] Grid Search tries all possible combinations and selects the best one.
