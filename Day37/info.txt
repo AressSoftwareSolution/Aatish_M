@@ -1,0 +1,16 @@
+create account on Docker HUB 
+
+=====Github codespaces =====
+commands:
+
+docker login 
+docker logout
+docker build -t <image_name> .      -----for image building 
+docker run -d -p 8501:8501 <image_name>      -----for running container
+docker tag <image_name> <dockerhub_username>/<image_name>:<tag>      -----for tagging 
+docker push <dockerhub_username>/<image_name>:<tag>      -----for pushing to docker hub
+
+
+
+
+Go to Azure -> container App -> create -> All process -> deploy
