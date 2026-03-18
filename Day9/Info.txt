@@ -1,0 +1,23 @@
+=======Basic Git commands=====
+
+git init          → start tracking project
+git add .         → select files to save
+git commit -m ""  → save snapshot
+git status        → check changes
+git log           → see history
+
+======= Workflow=======
+Typical workflow:
+
+1 Write code
+2 Add changes
+3 Commit changes
+4 Push to remote (GitHub etc.)
+
+=========using commands========
+
+git pull      → get latest code
+make changes
+git add .
+git commit -m "message"
+git push
